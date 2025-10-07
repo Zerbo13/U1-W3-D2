@@ -84,49 +84,44 @@
          Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
       */
 
-      const changeTitle = function (newTitle) {
-        document.title = newTitle;
-        const h1 = document.querySelector("h1");
-        if (h1) {
-          h1.textContent = newTitle;
-        }
+      const changeTitle = function () {
+        const title = document.querySelector("h1");
+        title.innerText = "Questo è il nuovo titolo";
       };
-      changeTitle("Questo è il nuovo titolo");
+      changeTitle();
 
       /* ESERCIZIO 2
          Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
       */
 
       const addClassToTitle = function () {
-        const h1 = document.querySelector("h1");
-        if (h1) {
-          h1.classList.add("myHeading");
-        }
+        const title = document.querySelector("h1");
+        title.classList.add("myHeading");
       };
+      addClassToTitle;
 
       /* ESERCIZIO 3
          Scrivi una funzione che cambi il testo dei p figli di un div
         */
 
       const changePcontent = function () {
-        const paragraphs = document.querySelectorAll("div p");
-        paragraphs.forEach((p) => {
-          p.textContent = "Paragrafo modificato";
-        });
+        const allPInsideDivs = document.querySelectorAll("div p");
+        for (let i = 0; i < allPInsideDivs.length; i++)
+          allPInsideDivs[i].innerText = "Il paragrafo è cammbiato";
       };
-      changePcontent("Paragrafo modificato");
+      changePcontent();
 
       /* ESERCIZIO 4
          Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
         */
 
       const changeUrls = function () {
-        const links = document.querySelectorAll("a:not(footer a)");
-        links.forEach((link) => {
-          link.href = "https://www.google.com";
-        });
+        const links = document.getElementsByName("a");
+        for (let i = 0; i < linl < length - 1; i++) {
+          links[i].setAttribute("href", "https://www.google.com");
+        }
       };
-      changeUrls("https://www.google.com");
+      changeUrls();
 
       /* ESERCIZIO 5
          Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
@@ -150,7 +145,7 @@
         newParagraph.textContent = "Nuovo paragrafo";
         firstDiv.appendChild(newParagraph);
       };
-      addParagraph("Nuovo paragrafo");
+      addParagraph();
 
       /* ESERCIZIO 7
          Scrivi una funzione che faccia scomparire la prima lista non ordinata
@@ -173,7 +168,7 @@
           ul.style.backgroundColor = "green";
         });
       };
-      paintItGreen("ul.style.backgroundColor = green");
+      paintItGreen();
 
       /* ESERCIZIO 9
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
@@ -192,7 +187,7 @@
           alert(link.href);
         });
       };
-      revealFooterLink("alert(link.href)");
+      revealFooterLink();
 
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
